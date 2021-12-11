@@ -1,0 +1,15 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  border-radius: 12px;
+  height: 400px;
+  min-width: 20%;
+  background-color: rgb(218, 218, 218);
+}
+.register-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}

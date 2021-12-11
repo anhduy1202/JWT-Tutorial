@@ -1,0 +1,46 @@
+.home-container{
+    display: flex;
+    background-color: rgb(236, 235, 235);
+    height:600px;
+    width:60%;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+.home-title{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.home-userlist{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.home-user{
+    margin: 1.5rem;
+    background-color: rgb(194, 194, 194);
+    padding:0.5rem;
+    border-radius: 12px;
+}
+
+.user-container{
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.delete-user{
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: rgb(240, 34, 96);
+    padding:0.35rem;
+    border-radius: 12px;
+    color:white;
+}
+.navbar {
+   display: flex;
+}
