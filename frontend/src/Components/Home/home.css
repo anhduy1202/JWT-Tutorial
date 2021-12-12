@@ -25,6 +25,10 @@
     padding:0.5rem;
     border-radius: 12px;
 }
+.home-role{
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
 
 .user-container{
     display: flex;
@@ -41,6 +45,13 @@
     border-radius: 12px;
     color:white;
 }
+.delete-user:hover{
+    background-color:rgb(207, 18, 75) ;
+}
 .navbar {
    display: flex;
+}
+.errorMsg{
+    margin-top: 3rem;
+    font-size: 1.5rem;
 }

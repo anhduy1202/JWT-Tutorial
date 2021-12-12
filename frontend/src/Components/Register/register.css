@@ -8,8 +8,15 @@
   height: 400px;
   min-width: 20%;
   background-color: rgb(218, 218, 218);
+  text-align:center;
 }
+
 .register-title {
   font-weight: 700;
   font-size: 1.5rem;
+}
+.register-error{
+  margin-top:1rem;
+  align-self:center;
+  color:rgb(255, 0, 55);
 }
