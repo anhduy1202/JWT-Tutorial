@@ -1,71 +1,72 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
-  name: "auth",
-  initialState: {
-    login: {
-      currentUser: null,
-      isFetching: false,
-      error: false,
+    name: "auth",
+    initialState:{
+        login:{
+            currentUser:null,
+            isFetching: false,
+            error:false
+        },
+        register:{
+            isFetching: false,
+            error:false,
+            success:false
+        },
     },
-    register: {
-      isFetching: false,
-      error: false,
-      errorMsg: "Something is wrong",
-      success: false,
-    },
-  },
-  reducers: {
-    loginStart: (state) => {
-      state.login.isFetching = true;
-    },
-    loginSuccess: (state, action) => {
-      state.login.isFetching = false;
-      state.login.error = false;
-      state.login.currentUser = action.payload;
-    },
-    loginFailed: (state) => {
-      state.login.isFetching = false;
-      state.login.error = true;
-    },
-    registerStart: (state) => {
-      state.register.isFetching = true;
-    },
-    registerSuccess: (state) => {
-      state.register.isFetching = false;
-      state.register.success = true;
-      state.register.error = false;
-    },
-    registerFailed: (state, action) => {
-      state.register.isFetching = false;
-      state.register.success = false;
-      state.register.errorMsg = action.payload;
-      state.register.error = true;
-    },
-    logoutStart: (state) => {
-      state.login.isFetching = true;
-    },
-    logoutSuccess: (state) => {
-      state.login.isFetching = false;
-      state.login.error = false;
-      state.login.currentUser = null;
-    },
-    logoutFailed: (state) => {
-      state.login.isFetching = false;
-      state.login.error = true;
-    },
-  },
+    reducers:{
+        loginStart: (state) =>{
+            state.login.isFetching = true;
+        },
+        loginSuccess: (state,action) => {
+            state.login.isFetching = false;
+            state.login.currentUser = action.payload;
+            state.login.error = false;
+        },
+        loginFailed: (state) =>{
+            state.login.isFetching = false;
+            state.login.error = true;
+        },
+        registerStart: (state) =>{
+            state.register.isFetching = true;
+        },
+        registerSuccess: (state) => {
+            state.register.isFetching = false;
+            state.register.error = false;
+            state.register.success = true;
+        },
+        registerFailed: (state) =>{
+            state.register.isFetching = false;
+            state.register.error = true;
+            state.register.success = false;
+        },
+        logOutSuccess: (state) => {
+            state.login.isFetching = false;
+            state.login.currentUser = null;
+            state.login.error = false;
+        },
+        logOutFailed: (state) =>{
+            state.login.isFetching = false;
+            state.login.error = true;
+        },
+        logOutStart: (state) =>{
+            state.login.isFetching = true;
+        },
+     
+    }
 });
 
 export const {
-  loginStart,
-  loginSuccess,
-  loginFailed,
-  registerStart,
-  registerSuccess,
-  registerFailed,
-  logoutStart,
-  logoutSuccess,
-  logoutFailed
+    loginStart,
+    loginFailed,
+    loginSuccess,
+    registerStart,
+    registerSuccess,
+    registerFailed,
+    logOutStart,
+    logOutSuccess,
+    logOutFailed
 } = authSlice.actions;
+
 export default authSlice.reducer;
+

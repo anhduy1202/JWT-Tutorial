@@ -1,21 +1,13 @@
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../redux/apiRequests";
-import { useEffect } from "react";
+import { loginUser } from "../../redux/apiRequest";
+import { useDispatch } from "react-redux";
 const Login = () => {
-  const user = useSelector((state) => state.auth.login?.currentUser);
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, []);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,9 +15,8 @@ const Login = () => {
       username: username,
       password: password,
     };
-    login(newUser, dispatch, navigate);
+    loginUser(newUser, dispatch, navigate);
   };
-
   return (
     <section className="login-container">
       <div className="login-title"> Log in</div>
@@ -46,7 +37,7 @@ const Login = () => {
       </form>
       <div className="login-register"> Don't have an account yet? </div>
       <Link className="login-register-link" to="/register">
-        Register one for free{" "}
+        Register one for free
       </Link>
     </section>
   );
