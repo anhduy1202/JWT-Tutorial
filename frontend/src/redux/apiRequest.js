@@ -5,6 +5,7 @@ import {
   loginSuccess,
   logOutFailed,
   logOutStart,
+  logOutSuccess,
   registerFailed,
   registerStart,
   registerSuccess,
@@ -71,7 +72,7 @@ export const logOut = async (dispatch, id, navigate, accessToken, axiosJWT) => {
     await axiosJWT.post("/v1/auth/logout", id, {
       headers: { token: `Bearer ${accessToken}` },
     });
-    dispatch(loginSuccess());
+    dispatch(logOutSuccess());
     navigate("/login");
   } catch (err) {
     dispatch(logOutFailed());
